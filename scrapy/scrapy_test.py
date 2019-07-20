@@ -1,3 +1,4 @@
+# Run it with: 
 import scrapy
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
@@ -12,7 +13,7 @@ class MySpider(scrapy.Spider):
     f = open("Top_Viewed_Websites.txt")
 
     with open("Top_Viewed_Websites.txt", "rt") as f:
-        start_urls = ['http://' + url.strip() for url in f.readlines()[0:100]]
+        start_urls = ['http://' + url.strip() for url in f.readlines()[0:1000]]
     
     def parse(self, response):
         le = LinkExtractor() # empty for getting everything, check different options on documentation
